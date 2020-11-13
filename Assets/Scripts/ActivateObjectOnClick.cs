@@ -7,6 +7,8 @@ public class ActivateObjectOnClick : MonoBehaviour
 
     public GameObject objectToActivate;
 
+    public AudioSource buildAudio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +24,6 @@ public class ActivateObjectOnClick : MonoBehaviour
     void OnMouseDown()
     {
         objectToActivate.SetActive(true);
+        buildAudio.Play();
     }
 }
