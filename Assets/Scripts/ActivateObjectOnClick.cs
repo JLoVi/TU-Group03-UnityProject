@@ -2,17 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class sphereRight : MonoBehaviour
+public class ActivateObjectOnClick : MonoBehaviour
 {
+
+    public GameObject objectToActivate;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        objectToActivate.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    void OnMouseDown()
+    {
+        objectToActivate.SetActive(true);
     }
 }
