@@ -14,7 +14,11 @@ public class CrystalFunctions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.SetActive(false);
+        foreach (GameObject crystal in crystals)
+        {
+            crystal.SetActive(false);
+        }
+
         StartCoroutine("GrowingCrystals");
     }
 
@@ -24,20 +28,27 @@ public class CrystalFunctions : MonoBehaviour
 
     }
 
-    void OnMouseDown()
-    {
-        gameObject.SetActive(false);
-        ScoreManager.crystalAmount++;
+    /* void OnMouseDown()
+     {
 
-        crystalAmountDisplay.text = ScoreManager.crystalAmount.ToString();
-    }
+         gameObject.SetActive(false);
+
+         ScoreManager.crystalAmount++;
+
+         crystalAmountDisplay.text = ScoreManager.crystalAmount.ToString();
+     }*/
 
     IEnumerator GrowingCrystals()
     {
-        while (true)
+
+        foreach (GameObject crystal in crystals)
         {
-            yield return new WaitForSeconds(Random.Range(3,8));
-            gameObject.SetActive(true);
+
+            yield return new WaitForSeconds(Random.Range(3, 8));
+
+            crystal.SetActive(true);
+
         }
     }
+
 }
