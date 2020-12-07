@@ -6,10 +6,6 @@ using UnityEngine.UI;
 
 public class ConsumeElevate : MonoBehaviour
 {
-
-
-    
-
     public GameObject step;
 
     public int elevationScale;
