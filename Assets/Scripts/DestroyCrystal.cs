@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DestroyCrystal : MonoBehaviour
 {
-    public int crystalAmount;
-    
+    public Text crystalAmountDisplay;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +21,8 @@ public class DestroyCrystal : MonoBehaviour
     void OnMouseDown()
     {
         gameObject.SetActive(false);
-        crystalAmount++;
+        ScoreManager.crystalAmount++;
+
+        crystalAmountDisplay.text = ScoreManager.crystalAmount.ToString();
     }
 }

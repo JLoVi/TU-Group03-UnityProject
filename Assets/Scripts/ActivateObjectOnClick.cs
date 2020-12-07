@@ -10,6 +10,8 @@ public class ActivateObjectOnClick : MonoBehaviour
 
     public AudioSource buildAudio;
 
+    public static int crystalAmount;
+
     // Start is called before the first frame update
     void Start()
     {
