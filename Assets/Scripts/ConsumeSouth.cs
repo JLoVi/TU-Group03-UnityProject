@@ -4,37 +4,34 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class ConsumeElevate : MonoBehaviour
+public class ConsumeSouth : MonoBehaviour
 {
+
     public GameObject step;
 
-    public int elevationScale;
+    public int SouthDistance;
 
     public Text crystalAmountDisplay;
-
-    public int crystalAmount;
-
-
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void OnMouseDown()
     {
-        //create a copy of Step (Parent Game Object with Children) Transform it 0.2 into y.
         if (ScoreManager.crystalAmount != 0)
         {
+            //create a copy of Step (Parent Game Object with Children) Transform it 0.2 into y.
 
-            Vector3 newposition = new Vector3(step.transform.position.x, step.transform.position.y + elevationScale, step.transform.position.z);
+            Vector3 newposition = new Vector3(step.transform.position.x, step.transform.position.y, step.transform.position.z - SouthDistance);
 
             Instantiate(step, newposition, Quaternion.identity);
 
@@ -42,10 +39,7 @@ public class ConsumeElevate : MonoBehaviour
             ScoreManager.crystalAmount--;
 
             crystalAmountDisplay.text = ScoreManager.crystalAmount.ToString();
-
-            //deactivate box-collider
-            //
-            //
         }
+            
     }
 }

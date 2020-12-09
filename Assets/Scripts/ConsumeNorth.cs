@@ -27,15 +27,19 @@ public class ConsumeNorth: MonoBehaviour
 
     void OnMouseDown()
     {
-        //create a copy of Step (Parent Game Object with Children) Transform it 0.2 into y.
+        if (ScoreManager.crystalAmount != 0)
+        {
+            // create a copy of Step(Parent Game Object with Children) Transform it 0.2 into y.
 
-        Vector3 newposition = new Vector3(step.transform.position.x, step.transform.position.y, step.transform.position.z + NorthDistance);
+            Vector3 newposition = new Vector3(step.transform.position.x, step.transform.position.y, step.transform.position.z + NorthDistance);
 
-        Instantiate(step, newposition, Quaternion.identity);
+            Instantiate(step, newposition, Quaternion.identity);
 
-        //spend one crystal
-        ScoreManager.crystalAmount--;
+            //spend one crystal
+            ScoreManager.crystalAmount--;
 
-        crystalAmountDisplay.text = ScoreManager.crystalAmount.ToString();
+            crystalAmountDisplay.text = ScoreManager.crystalAmount.ToString();
+        }
+            
     }
 }
