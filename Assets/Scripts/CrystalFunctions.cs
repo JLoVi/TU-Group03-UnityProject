@@ -44,7 +44,7 @@ public class CrystalFunctions : MonoBehaviour
         foreach (GameObject crystal in crystals)
         {
 
-            yield return new WaitForSeconds(Random.Range(3, 8));
+            yield return new WaitForSeconds(Random.Range(6, 13));
 
             crystal.SetActive(true);
 
